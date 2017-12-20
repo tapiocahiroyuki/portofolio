@@ -3,6 +3,23 @@
 <h2 class="blog-post-title entry-title p-name" itemprop="headline"><a href="<$mt:EntryPermalink encode_html="1"$>" rel="bookmark"><$mt:EntryTitle$></a></h2>
 
 <footer class="asset-meta blog-post-meta">
+<mt:IfCategory name="学歴" type="primary">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>在籍期間</dt>
+<dd><span><mt:EntryCustomFields include="入学・就職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time>入学／</mt:EntryCustomFields><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="end"><$mt:EntryCustomFieldValue$></time>卒業</mt:EntryCustomFields></span></dd>
+</dl>
+</mt:IfCategory>
+<mt:IfCategory name="職歴" type="primary"><dl class="dl-horizontal asset-meta-list"><dt><i class="fa fa-calendar" aria-hidden="true"></i>在籍期間</dt>
+<dd><span class="duration"><mt:EntryCustomFields include="入学・就職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields>〜<mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="end"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></span></dd>
+</dl>
+</mt:IfCategory>
+<mt:IfCategory name="資格" type="primary">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>取得</dt>
+<dd><span><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></dd>
+</dl>
+</mt:IfCategory>
+<mt:Ignore>====================== 発言・投稿日は出力しない ======================
 <ul class="asset-meta-list">
 <li class="asset-meta-list-item">投稿日:<time datetime="<$mt:EntryDate format_name="iso8601"$>" class="updated published dt-published" itemprop="datePublished"><$mt:EntryDate format="%x"$></time></li>
 
@@ -13,6 +30,7 @@
 </mt:If>
 </mt:IfArchiveTypeEnabled>
 </ul>
+====================== 発言・投稿日は出力しない ======================</mt:Ignore>
 </footer>
 
 <mt:If tag="EntryBody">
