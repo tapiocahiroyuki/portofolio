@@ -55,6 +55,7 @@
     "grunt-jscs": "~3.0.1",
     "grunt-saucelabs": "~9.0.0",
     "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
     "load-grunt-tasks": "~3.5.0",
     "markdown-it": "^7.0.0",
     "shelljs": "^0.7.0",
