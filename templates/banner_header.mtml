@@ -1,25 +1,33 @@
 <div class="blog-masthead">
 <div class="container">
 
-<nav class="blog-nav">
-<a href="<$mt:BlogURL$>" class="blog-nav-item">Home</a>
-<mt:Pages tag="@about">
-<a href="<$mt:PagePermalink$>" class="blog-nav-item"><$mt:PageTitle$></a>
-</mt:Pages>
-<mt:Pages tag="@ADD_TO_SITE_NAV">
-<a href="<$mt:PagePermalink encode_html="1"$>" class="blog-nav-item"><$mt:PageTitle$></a>
-</mt:Pages>
-<a href="<$mt:Link template="最新記事のフィード"$>" class="blog-nav-item">Feed</a>
+<div class="navbar-header">
+
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div><a class="navbar-brand" href="<$mt:Link template="メインページ"$>"><$mt:BlogName$></a></div>
+</div>
+
+<nav class="blog-nav navbar-collapse collapse navbar-right">
+<ul class="nav navbar-nav">
+<li><a href="<$mt:Link template="メインページ"$>"><i class="fa fa-home"></i></a></li>
+<mt:TopLevelCategories>
+<li class="archive-header"><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
+</mt:TopLevelCategories>
+</ul>
+<form class="navbar-form navbar-right site-search" method="get" action="<$mt:CGIPath$><$mt:SearchScript$>">
+<input type="hidden" name="IncludeBlogs" value="<mt:BlogID>">
+<input type="hidden" name="limit" value="<$mt:SearchMaxResults$>">
+<label for="search" accesskey="y">検索</label>
+<input class="form-control" type="search" placeholder="Search" id="search" name="search" value="<$mt:SearchString$>">
+</form>
 </nav>
 
 </div>
 </div>
 
 <div class="container">
-
-<header class="blog-header">
-<h1 class="blog-title"><$mt:BlogName encode_html="1"$></h1>
-<p class="lead blog-description"><$mt:BlogDescription$></p>
-</header>
-
 <div class="row">

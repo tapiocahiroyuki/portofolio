@@ -33,7 +33,7 @@
 <link itemprop="url" href="<$mt:BlogURL encode_html="1"$>">
 <link itemprop="image" href="<mt:Assets type="image" tag="@SITE_ICON" limit="1"><$mt:AssetThumbnailURL width="320px" square="1" encode_html="1"$><mt:Else><$mt:BlogURL$>blogimg/og_image.png</mt:Assets>">
 
-<title><$mt:BlogName encode_html="1"$></title>
+<title><$mt:BlogName encode_html="1"$> of <mt:Authors any_type="1" need_entry="0"><$mt:AuthorDisplayName encode_html="1"$></mt:Authors></title>
 
 </head>
 
@@ -41,11 +41,19 @@
 
 <$mt:include module="バナーヘッダー"$>
 
+<header class="blog-header">
+<h1 class="blog-title"><$mt:BlogName encode_html="1"$> of <mt:Authors any_type="1" need_entry="0"><$mt:AuthorDisplayName encode_html="1"$></mt:Authors></h1>
+<p class="lead blog-description"><$mt:BlogDescription$></p>
+</header>
+
 <main class="col-sm-8 blog-main">
 
-<mt:Entries limit="$entries_per_page" search_results="1">
+<mt:TopLevelCategories>
+<h2 class="h2"><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></h2>
+<mt:Entries sort_by="field:dateexit">
 <$mt:Include module="記事の概要"$>
 </mt:Entries>
+</mt:TopLevelCategories>
 
 <$mt:Include module="ページネーション"$>
 
