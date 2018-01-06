@@ -94,10 +94,11 @@ gulp.task('dev', ['less', 'minify-css', 'copy'], function() {
     //gulp.watch('js/**/*.js', browserSync.reload);
 });
 
-// Copy CSS to hosomi Lab.
+// Copy CSS to portofolio.
 gulp.task('copy', function() {
     gulp.src('dist/css/blog_css.min.css')
-        //.pipe(gulp.dest('../../../../portofolio/css'))
+        .pipe(gulp.dest('../../../../portofolio/css'));
+    gulp.src('dist/css/blog_css.min.css')
         .pipe(rename({basename: "blog_css_min",extname: ".mtml"}))
         .pipe(gulp.dest('../templates'));
 });
