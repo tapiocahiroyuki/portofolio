@@ -1,0 +1,27 @@
+// Text Power
+
+.power-font-size(@size:@font-size-base) when not (isnumber(@size)) {
+  font-size: inherit;
+}
+
+.power-font-size(@size:@font-size-base) when (isnumber(@size)) {
+  font-size: @size;
+@media screen and (max-width: @screen-xs-max) {
+  font-size: pow(@size, @power);
+}
+}
+
+.power-line-height(@height:@line-height-base) when not (isnumber(@height)) {
+  font-size: inherit;
+}
+.power-line-height(@height:@line-height-base) when (isnumber(@height)) {
+  line-height: @height;
+@media screen and (max-width: @screen-xs-max) {
+  line-height: pow(@height, @power);
+}
+}
+
+.power-font(@size:@font-size-base, @height:@line-height-base){
+  .power-font-size(@size);
+  .power-line-height(@height);
+}

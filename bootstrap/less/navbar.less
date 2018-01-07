@@ -164,7 +164,7 @@
   float: left;
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
   font-size: @font-size-large;
-  line-height: @line-height-computed;
+  .power-line-height(@line-height-computed);
   height: @navbar-height;
 
   &:hover,
@@ -235,7 +235,7 @@
   > li > a {
     padding-top:    10px;
     padding-bottom: 10px;
-    line-height: @line-height-computed;
+    .power-line-height(@line-height-computed);
   }
 
   @media (max-width: @grid-float-breakpoint-max) {
@@ -253,7 +253,7 @@
         padding: 5px 15px 5px 25px;
       }
       > li > a {
-        line-height: @line-height-computed;
+        .power-line-height(@line-height-computed);
         &:hover,
         &:focus {
           background-image: none;

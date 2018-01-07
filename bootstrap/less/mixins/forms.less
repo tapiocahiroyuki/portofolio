@@ -70,12 +70,12 @@
   height: @input-height;
   padding: @padding-vertical @padding-horizontal;
   font-size: @font-size;
-  line-height: @line-height;
+  .power-line-height(@line-height);
   border-radius: @border-radius;
 
   select& {
     height: @input-height;
-    line-height: @input-height;
+    .power-line-height(@input-height);
   }
 
   textarea&,

@@ -84,7 +84,7 @@ output {
   display: block;
   padding-top: (@padding-base-vertical + 1);
   font-size: @font-size-base;
-  line-height: @line-height-base;
+  .power-line-height(@line-height-base);
   color: @input-color;
 }
 
@@ -117,7 +117,7 @@ output {
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: @padding-base-vertical @padding-base-horizontal;
   font-size: @font-size-base;
-  line-height: @line-height-base;
+  .power-line-height (@line-height-base);
   color: @input-color;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -189,17 +189,17 @@ input[type="search"] {
   input[type="datetime-local"],
   input[type="month"] {
     &.form-control {
-      line-height: @input-height-base;
+      .power-line-height(@input-height-base);
     }
 
     &.input-sm,
     .input-group-sm & {
-      line-height: @input-height-small;
+      .power-line-height (@input-height-small);
     }
 
     &.input-lg,
     .input-group-lg & {
-      line-height: @input-height-large;
+      .power-line-height (@input-height-large);
     }
   }
 }
@@ -334,12 +334,12 @@ input[type="checkbox"] {
     height: @input-height-small;
     padding: @padding-small-vertical @padding-small-horizontal;
     font-size: @font-size-small;
-    line-height: @line-height-small;
+    .power-line-height(@line-height-small);
     border-radius: @input-border-radius-small;
   }
   select.form-control {
     height: @input-height-small;
-    line-height: @input-height-small;
+    .power-line-height(@input-height-small);
   }
   textarea.form-control,
   select[multiple].form-control {
@@ -350,7 +350,7 @@ input[type="checkbox"] {
     min-height: (@line-height-computed + @font-size-small);
     padding: (@padding-small-vertical + 1) @padding-small-horizontal;
     font-size: @font-size-small;
-    line-height: @line-height-small;
+    .power-line-height(@line-height-small);
   }
 }
 
@@ -362,12 +362,12 @@ input[type="checkbox"] {
     height: @input-height-large;
     padding: @padding-large-vertical @padding-large-horizontal;
     font-size: @font-size-large;
-    line-height: @line-height-large;
+    .power-line-height(@line-height-large);
     border-radius: @input-border-radius-large;
   }
   select.form-control {
     height: @input-height-large;
-    line-height: @input-height-large;
+    .power-line-height(@input-height-large);
   }
   textarea.form-control,
   select[multiple].form-control {
@@ -378,7 +378,7 @@ input[type="checkbox"] {
     min-height: (@line-height-computed + @font-size-large);
     padding: (@padding-large-vertical + 1) @padding-large-horizontal;
     font-size: @font-size-large;
-    line-height: @line-height-large;
+    .power-line-height(@line-height-large);
   }
 }
 
@@ -405,7 +405,7 @@ input[type="checkbox"] {
   display: block;
   width: @input-height-base;
   height: @input-height-base;
-  line-height: @input-height-base;
+  .power-line-height(@input-height-base);
   text-align: center;
   pointer-events: none;
 }
@@ -414,14 +414,14 @@ input[type="checkbox"] {
 .form-group-lg .form-control + .form-control-feedback {
   width: @input-height-large;
   height: @input-height-large;
-  line-height: @input-height-large;
+  .power-line-height(@input-height-large);
 }
 .input-sm + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: @input-height-small;
   height: @input-height-small;
-  line-height: @input-height-small;
+  .power-line-height(@input-height-small);
 }
 
 // Feedback states

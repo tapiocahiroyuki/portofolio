@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @headings-font-family;
   font-weight: @headings-font-weight;
-  line-height: @headings-line-height;
+  .power-line-height(@headings-line-height);
   color: @headings-color;
 
   small,
@@ -192,7 +192,7 @@ dl {
 }
 dt,
 dd {
-  line-height: @line-height-base;
+  .power-line-height(@line-height-base);
 }
 dt {
   font-weight: bold;
@@ -263,7 +263,7 @@ blockquote {
   .small {
     display: block;
     font-size: 80%; // back to default font-size
-    line-height: @line-height-base;
+    .power-line-height(@line-height-base);
     color: @blockquote-small-color;
 
     &:before {
@@ -298,5 +298,5 @@ blockquote.pull-right {
 address {
   margin-bottom: @line-height-computed;
   font-style: normal;
-  line-height: @line-height-base;
+  .power-line-height(@line-height-base);
 }
