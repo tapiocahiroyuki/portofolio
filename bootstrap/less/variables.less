@@ -42,22 +42,23 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  "UDKakugo_LargePr6N-EL", 'HiraginoSans-W3','ヒラギノ角ゴシック', Meiryo, 'メイリオ', Osaka, 'MS PGothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       'MatissePro-DB', 'HiraMinProN-W3', "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-monospace:   'Osaka等幅', 'ＭＳ ゴシック', Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          1.6em;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h1:            3.2em; // ~32px
+@font-size-h2:            2.2em; // ~22px
+@font-size-h3:            2.6em; // ~26px
+@font-size-h4:            1.8em; // ~18px
 @font-size-h5:            @font-size-base;
-@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h6:            1.2em; // ~12px
+
 //font-size/line-height power for narrow screen
 @power:					0.8;
 
@@ -67,8 +68,8 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
-@headings-font-weight:    500;
+@headings-font-family:    "TsukuARdGothicStd-D", 'TsukuARdGothic-Bold', 'HiraMaruProN-W4','ヒラギノ丸ゴ ProN', "HG丸ゴシックM-PRO", "メイリオ", Meiryo, Osaka, "MS Pゴシック", "MS PGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@headings-font-weight:    normal;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -89,17 +90,17 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+@padding-base-vertical:     16px;
+@padding-base-horizontal:   16px;
 
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
+@padding-large-vertical:    ceil((@padding-base-vertical * 2.0));
+@padding-large-horizontal:  ceil((@padding-base-horizontal * 2.0));
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    ceil((@padding-base-vertical * 0.5));
+@padding-small-horizontal:  ceil((@padding-base-horizontal * 0.5));
 
-@padding-xs-vertical:       1px;
-@padding-xs-horizontal:     5px;
+@padding-xs-vertical:       ceil((@padding-base-vertical * 0.25));
+@padding-xs-horizontal:     ceil((@padding-base-horizontal * 0.25));
 
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;

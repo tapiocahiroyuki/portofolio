@@ -4,11 +4,6 @@
  * Globals
  */
 
-body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
-}
-
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -16,7 +11,6 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -80,17 +74,15 @@ h6, .h6 {
  */
 
 .blog-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: @padding-base-vertical;
+  padding-bottom:  @padding-base-vertical;
 }
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
-  font-size: 60px;
   font-weight: normal;
 }
 .blog-description {
-  font-size: 20px;
   color: #999;
 }
 
@@ -99,9 +91,10 @@ h6, .h6 {
  * Main column and sidebar layout
  */
 
-.blog-main {
-  font-size: 18px;
-  line-height: 1.5;
+/* Headings */
+
+h1, .h1{
+  border-bottom: 2px solid @brand-primary;
 }
 
 /* Sidebar modules for boxing content */
@@ -144,7 +137,6 @@ h6, .h6 {
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 40px;
 }
 .blog-post-meta {
   margin-bottom: 20px;
