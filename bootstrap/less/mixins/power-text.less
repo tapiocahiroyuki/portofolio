@@ -1,15 +1,17 @@
 // Text Power
+.power-font-size(@size:@font-size-base) when (isnumber(@size)) {
+  font-size: @size;
+@media screen and (max-width: @screen-xs-max) {
+  @powered : pow(@size, @power);
+  font-size: @powered;
+}
+}
 
 .power-font-size(@size:@font-size-base) when not (isnumber(@size)) {
   font-size: inherit;
 }
 
-.power-font-size(@size:@font-size-base) when (isnumber(@size)) {
-  font-size: @size;
-@media screen and (max-width: @screen-xs-max) {
-  font-size: pow(@size, @power);
-}
-}
+
 
 .power-line-height(@height:@line-height-base) when not (isnumber(@height)) {
   font-size: inherit;
