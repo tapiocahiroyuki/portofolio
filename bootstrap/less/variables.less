@@ -49,8 +49,8 @@
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          1.6rem;
-@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
-@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-small:         @font-size-base * 0.85; // ~12px
 
 @font-size-h1:            3.2rem; // ~32px
 @font-size-h2:            2.2rem; // ~22px
@@ -63,7 +63,7 @@
 @power:					0.8;
 
 //** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.428571429; // 20/14
+@line-height-base:        1.5; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
@@ -90,17 +90,17 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     16px;
-@padding-base-horizontal:   16px;
+@padding-base-vertical:     1.6rem;
+@padding-base-horizontal:   1.6rem;
 
-@padding-large-vertical:    ceil((@padding-base-vertical * 2.0));
-@padding-large-horizontal:  ceil((@padding-base-horizontal * 2.0));
+@padding-large-vertical:    @padding-base-vertical * 2.0;
+@padding-large-horizontal:  @padding-base-horizontal * 2.0;
 
-@padding-small-vertical:    ceil((@padding-base-vertical * 0.5));
-@padding-small-horizontal:  ceil((@padding-base-horizontal * 0.5));
+@padding-small-vertical:    @padding-base-vertical * 0.5;
+@padding-small-horizontal:  @padding-base-horizontal * 0.5;
 
-@padding-xs-vertical:       ceil((@padding-base-vertical * 0.25));
-@padding-xs-horizontal:     ceil((@padding-base-horizontal * 0.25));
+@padding-xs-vertical:       @padding-base-vertical * 0.25;
+@padding-xs-horizontal:     @padding-base-horizontal * 0.25;
 
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
@@ -209,11 +209,11 @@
 @input-color-placeholder:        #999;
 
 //** Default `.form-control` height
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+@input-height-base:              @line-height-computed + (@padding-small-vertical * 2);
 //** Large `.form-control` height
-@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2));
 //** Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2));
 
 //** `.form-group` margin
 @form-group-margin-bottom:       15px;
@@ -360,7 +360,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    3.5rem;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
