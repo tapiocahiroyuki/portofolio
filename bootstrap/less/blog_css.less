@@ -12,7 +12,7 @@ h5, .h5,
 h6, .h6 {
   margin-top: 0;
   font-weight: normal;
-  color: #333;
+  color: @brand-primary;
 }
 
 
@@ -32,7 +32,7 @@ h6, .h6 {
  */
 
 .blog-masthead {
-  background-color: #428bca;
+  background-color: @gray-light;
   box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 
@@ -42,17 +42,18 @@ h6, .h6 {
   display: inline-block;
   padding: 10px;
   font-weight: 500;
-  color: #cdddeb;
+  color: #FFF;
+
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
-  color: #fff;
+  color: @gray-light;
   text-decoration: none;
 }
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #fff;
+  color: @gray-light;
 }
 .blog-nav .active:after {
   position: absolute;
@@ -81,9 +82,10 @@ h6, .h6 {
   margin-top: 30px;
   margin-bottom: 0;
   font-weight: normal;
+  padding-bottom: @padding-small-vertical;
 }
 .blog-description {
-  color: #999;
+  color: @gray;
 }
 
 
@@ -152,7 +154,7 @@ h1, .h1{
   padding: 40px 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: @gray;
   border-top: 1px solid #e5e5e5;
   clear: both;
 }
