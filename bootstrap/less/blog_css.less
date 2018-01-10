@@ -81,12 +81,15 @@ body {
   text-decoration: none;
 }
 
-.blog-nav .nav > li > a {
-  padding: @padding-small-vertical @padding-small-horizontal;
-  color: white;
-  &:hover{
-    background-color: @gray-lighter;
-    color: @gray-dark;
+.blog-nav .nav {
+  margin-right: @padding-base-horizontal;
+  & > li > a {
+    padding: @padding-small-vertical @padding-small-horizontal;
+    color: white;
+    &:hover{
+      background-color: @gray-lighter;
+      color: @gray-dark;
+    }
   }
 }
 .navbar-form {
