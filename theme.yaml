@@ -1,174 +1,195 @@
----
-id: "@Style_Bootstarp_for_MT"
-label: "@Style Bootstarp Theme for Movable Type"
-name: "@Style Bootstarp Theme for Movable Type"
-version: 1.0
-author_link: "http://atstyle.biz/theme_temp/free/mt6_bootstrap_01/"
-author_name: "@Style"
+--- 
+author_link: https://tapioca-puda.movabletype.biz/
+author_name: 竹岡浩之
 class: blog
-description: "The official template of creating a blog with Bootstrap for Movable Type"
-thumbnail_file: thumb.png
-thumbnail_file_medium: thumb-medium.png
-thumbnail_file_small: thumb-small.png
-
-elements:
-  default_folders:
+description: 開発中のPortofolio用テーマです
+elements: 
+  custom_fields: 
+    component: commercial
+    data: 
+      dateenter: 
+        default: ''
+        description: 入学または退職した日付
+        name: 入学・就職日
+        obj_type: entry
+        options: datetime
+        required: 0
+        tag: dateEnter
+        type: datetime
+      dateexit: 
+        default: ''
+        description: 卒業または退職した日を記入します
+        name: 卒業・退職日
+        obj_type: entry
+        options: datetime
+        required: 0
+        tag: dateExit
+        type: datetime
+      eyecatch: 
+        default: ''
+        description: アーカイブや記事トップ、og:imageなどで使います。
+        name: アイキャッチ
+        obj_type: entry
+        options: ~
+        required: 0
+        tag: eyeCatch
+        type: image
+    importer: custom_fields
+  default_categories: 
+    component: ~
+    data: 
+      career: 
+        label: 職歴
+      education: 
+        label: 学歴
+      portofolio: 
+        children: 
+          business: 
+            label: 業務
+          private: 
+            label: プライベート
+        label: ポートフォリオ
+      qualification: 
+        label: 資格
+      skill: 
+        label: スキル
+    importer: default_categories
+  default_folders: 
+    component: ~
+    data: 
+      about: 
+        label: about
     importer: default_folders
-    name: Default Folders
+  template_set: 
     component: ~
-    data:
-      about:
-        label: About
-  default_pages:
-    importer: default_pages
-    name: Default Pages
-    component: ~
-    data:
-      index:
-        basename: about
-        title: About
-        text: |
-          <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        tags: "@about"
-        folder: About
-
-  template_set:
-    importer: template_set
-    component: ~
-    data:
+    data: 
       base_path: templates
-      templates:
-
-        index:
-          feed_recent:
-            label: 最新記事のフィード
-            outfile: atom.xml
+      label: exported_template set
+      templates: 
+        archive: 
+          category_entry_listing: 
+            label: カテゴリ別記事リスト
+            mappings: 
+              category: 
+                archive_type: Category
+                file_template: "%-c/%i"
+                preferred: 1
+        index: 
+          blog_css: 
+            label: blog_css_min
+            outfile: css/blog_css.min.css
             rebuild_me: 1
-          javascript:
-            label: JavaScript
-            outfile: js/mt.js
-            rebuild_me: 1
-          main_index:
-            label: メインページ
-            outfile: index.html
-            rebuild_me: 1
-          blog_css:
-            label: blog_css
-            outfile: css/blog.css
-            rebuild_me: 1
-          bootstrap_min_css:
+          bootstrap_min_css: 
             label: bootstrap_min_css
             outfile: css/bootstrap.min.css
             rebuild_me: 1
-          bootstrap_min_js:
+          bootstrap_min_js: 
             label: bootstrap_min_js
             outfile: js/bootstrap.min.js
             rebuild_me: 1
-          custom_for_mt_css:
+          custom_for_mt_css: 
             label: custom_for_mt_css
             outfile: css/custom_for_mt.css
             rebuild_me: 1
-
-        archive:
-          category_entry_listing:
-            label: カテゴリ別記事リスト
-            mappings:
-              category:
-                archive_type: Category
-                file_template: '%-c/%i'
-                preferred: 1
-        individual:
-          entry:
+          feed_recent: 
+            label: 最新記事のフィード
+            outfile: atom.xml
+            rebuild_me: 1
+          javascript: 
+            label: JavaScript
+            outfile: js/mt.js
+            rebuild_me: 1
+          main_index: 
+            label: メインページ
+            outfile: index.html
+            rebuild_me: 1
+        individual: 
+          entry: 
             label: 記事
-            mappings:
-              individual:
+            mappings: 
+              individual: 
                 archive_type: Individual
-                file_template: '%y/%m/%-f'
+                file_template: "%y/%m/%-f"
                 preferred: 1
-        page:
-          page:
-            label: ウェブページ
-            mappings:
-              page:
-                archive_type: Page
-                file_template: '%-c/%-f'
-                preferred: 1
-          monthly_entry_listing:
-            label: 月別記事リスト
-            mappings:
-              monthly:
-                archive_type: Monthly
-                file_template: '%y/%m/%i'
-                preferred: 1
-
-        module:
-          banner_footer:
+        module: 
+          banner_footer: 
             label: バナーフッター
-          banner_header:
+          banner_header: 
             label: バナーヘッダー
-          comment_detail:
+          comment_detail: 
             label: コメント詳細
-          comments:
-            label: コメント
-          entry_summary:
-            label: 記事の概要
-          html_head:
-            label: HTMLヘッダー
-          sidebar:
-            label: サイドバー
-          pagination:
-            label: ページネーション
-          zenback:
-            label: Zenback
-          comment_form:
+          comment_form: 
             label: コメント入力フォーム
-          trackbacks:
+          comments: 
+            label: コメント
+          entry_summary: 
+            label: 記事の概要
+          html_head: 
+            label: HTMLヘッダー
+          pagination: 
+            label: ページネーション
+          sidebar: 
+            label: サイドバー
+          trackbacks: 
             label: トラックバック
-
-        system:
-          comment_preview:
+          zenback: 
+            label: Zenback
+        page: 
+          monthly_entry_listing: 
+            label: 月別記事リスト
+            mappings: 
+              monthly: 
+                archive_type: Monthly
+                file_template: "%y/%m/%i"
+                preferred: 1
+          page: 
+            label: ウェブページ
+            mappings: 
+              page: 
+                archive_type: Page
+                file_template: "%-c/%-f"
+                preferred: 1
+        system: 
+          comment_preview: 
             label: コメントプレビュー
-          comment_response:
+          comment_response: 
             label: コメント完了
-          dynamic_error:
+          dynamic_error: 
             label: ダイナミックパブリッシングエラー
-          popup_image:
+          popup_image: 
             label: ポップアップ画像
-          search_results:
+          search_results: 
             label: 検索結果
-
-        widget:
-          side_about:
+        widget: 
+          side_about: 
             label: About
-          side_category_archive_list:
+          side_category_archive_list: 
             label: カテゴリアーカイブ
-          side_monthly_archive_list:
+          side_monthly_archive_list: 
             label: 月別アーカイブ
-          side_pages_list:
+          side_pages_list: 
             label: ページ一覧
-          side_powered:
+          side_powered: 
             label: Powered By
-          side_recent_assets:
+          side_recent_assets: 
             label: アイテム
-          side_recent_comments:
+          side_recent_comments: 
             label: 最近のコメント
-          side_recent_entries:
+          side_recent_entries: 
             label: 最近の記事
-          side_search:
+          side_search: 
             label: 検索
-          side_tag_cloud:
+          side_tag_cloud: 
             label: タグクラウド
-
-        widgetset:
-          side_widgetset:
+        widgetset: 
+          side_widgetset: 
             label: サイドバーウィジェットセット
             order: 1000
-            widgets:
-              - About
+            widgets: 
               - カテゴリアーカイブ
-              - 最近の記事
-              - タグクラウド
-              - アイテム
-              - 月別アーカイブ
-              - 検索
-
+              - About
+    importer: template_set
+id: theme_from_portofolio
+label: Portofolio（Blog）のテーマ
+name: Portofolio（Blog）のテーマ
+version: 1.0.2
