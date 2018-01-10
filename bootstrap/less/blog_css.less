@@ -47,13 +47,15 @@ body {
 
   & > .container{
     position: relative;
-    & > nav {
-    	position: absolute;
-    	transform: translateY(-50%);
-    	top: 50%;
-    	margin: auto;
-    	display: inline-block !important;
-      right: 0;
+    & .navbar-collapse {
+      @media (min-width: @grid-float-breakpoint) {
+        display: inline-block;
+      	position: absolute;
+      	transform: translateY(-50%);
+      	top: 50%;
+      	margin: auto;
+        right: 0;
+      }
     }
   }
   .navbar-brand {
@@ -79,7 +81,7 @@ body {
   text-decoration: none;
 }
 
-.blog-nav > .nav > li > a {
+.blog-nav .nav > li > a {
   padding: @padding-small-vertical @padding-small-horizontal;
   color: white;
   &:hover{
