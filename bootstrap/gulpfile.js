@@ -7,6 +7,9 @@ var rename = require("gulp-rename");
 //var uglify = require('gulp-uglify');
 //var pkg = require('./package.json');
 
+var gutil = require( 'gulp-util' );
+var ftp = require( 'vinyl-ftp' );
+
 // Set the banner content
 // var banner = ['/*!\n',
 //     ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -102,3 +105,32 @@ gulp.task('copy', function() {
         .pipe(rename({basename: "blog_css_min",extname: ".mtml"}))
         .pipe(gulp.dest('../templates'));
 });
+
+gulp.task( 'ftp', function () {
+    var conn = ftp.create( {
+        host:     '203.137.183.89',
+        port: 21,
+        user:     '4kbnx627',
+        password: '6#.gyTGF',
+        maxConnections: 1,
+        parallel: 1,
+        secure: true ,
+        secureOptions: { rejectUnauthorized: false },
+        parallel: 10,
+        log:      gutil.log
+    } );
+
+
+    var globs = [
+         '../templates/**.mtml'
+    ];
+
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    return gulp.src( globs, { base: '.', buffer: false } )
+        // .pipe( conn.newer( '/themes/theme_from_portofolio/templates/' ) ) // only upload newer files
+        .pipe( conn.dest( '/themes/theme_from_portofolio/templates/' ) );
+
+} );
