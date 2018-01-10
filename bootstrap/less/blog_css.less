@@ -174,17 +174,24 @@ h1, .h1{
 
 
 /* Pagination */
+// .pager {
+//   margin-bottom: 60px;
+//   text-align: left;
+// }
+// .pager > li > a {
+//   width: 140px;
+//   padding: 10px 20px;
+//   text-align: center;
+//   border-radius: 30px;
+// }
 .pager {
-  margin-bottom: 60px;
-  text-align: left;
+  .previous a::before{
+    content: "< " ;
+  }
+  .next a::after{
+    content: " >";
+  }
 }
-.pager > li > a {
-  width: 140px;
-  padding: 10px 20px;
-  text-align: center;
-  border-radius: 30px;
-}
-
 
 /*
  * Blog posts
