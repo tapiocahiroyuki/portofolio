@@ -1,33 +1,39 @@
 <div class="blog-masthead">
 <div class="container">
-
+<nav class="navbar navbar-default blog-nav">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
 <div class="navbar-header">
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#profile-navbar-collapse" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<div><a class="navbar-brand" href="<$mt:Link template="メインページ"$>"><$mt:BlogName$></a></div>
+<a class="navbar-brand" href="<$mt:Link template="メインページ"$>"><i class="fa fa-suitcase" aria-hidden="true"></i>Profile</a></div>
 </div>
 
-<nav class="blog-nav navbar-collapse collapse navbar-right">
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="profile-navbar-collapse">
 <ul class="nav navbar-nav">
 <li><a href="<$mt:Link template="メインページ"$>"><i class="fa fa-home"></i></a></li>
 <mt:TopLevelCategories>
 <li class="archive-header"><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
 </mt:TopLevelCategories>
 </ul>
-<form class="navbar-form navbar-right site-search" method="get" action="<$mt:CGIPath$><$mt:SearchScript$>">
+<form class="navbar-form navbar-left site-search" method="get" action="<$mt:CGIPath$><$mt:SearchScript$>">
+<div class="form-group">
 <input type="hidden" name="IncludeBlogs" value="<mt:BlogID>">
 <input type="hidden" name="limit" value="<$mt:SearchMaxResults$>">
-<label for="search" accesskey="y">検索</label>
-<input class="form-control" type="search" placeholder="Search" id="search" name="search" value="<$mt:SearchString$>">
+<input class="form-control" type="search" placeholder="検索…" id="search" name="search" value="<$mt:SearchString$>">
+</div>
 </form>
-</nav>
 
-</div>
-</div>
+</div><!-- /#profile-navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div><!-- /.container -->
+</div><!-- ./blog-masthead -->
 
 <div class="container">
 <div class="row">
