@@ -143,6 +143,7 @@ h1, .h1{
  * Blog main
  */
 .blog-main{
+  // Headings
   h2, .h2{
     background-color: @gray-lighter;
     padding: @padding-base-vertical @padding-base-horizontal;
@@ -153,13 +154,71 @@ h1, .h1{
     margin: @padding-small-vertical 0;
     border-left: solid @padding-small-vertical @gray-dark;
   }
+
+  h2, .h2,
+  h3, .h3 {
+      margin-top: @padding-large-vertical;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: @padding-large-vertical;
+  }
+
+  // Paragraph
+  p, dl, ul, ol, code, pre {
+    margin-left: @padding-base-horizontal;
+    margin-right: @padding-base-horizontal;
+  }
+
+  p:not(.noindent):not(.img)::before {
+    content: "　";
+  }
+
+  // Lists
+  dl:not(.dl-horizontal) > dd {
+    margin-bottom: @padding-small-vertical;
+    &:last-child{
+      margin-bottom: inherit;
+    }
+  }
+
+  // List bullet
+  dl > dt, .list-bullet-01 {
+    &:before{
+      content: "■";
+    }
+  }
+  .list-bullet > li, .list-bullet {
+    position: relative;
+    &::before {
+    	content: "▲";
+    	transform: rotate(90deg);
+    	position: absolute;
+      font-size: 0.9em;
+      top: 0.1em;
+    	left: -1em;
+    }
+  }
+
 }
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
   margin: 0 -15px 15px;
+
+  ol li ul,
+  ul li ol,
+  ul li ul,
+  ol li ol{
+    margin-left: 1em;
+    margin-bottom: @padding-small-vertical;
+  }
 }
+
 .sidebar-module-inset {
   padding: 15px;
   background-color: #f5f5f5;
@@ -198,14 +257,24 @@ h1, .h1{
  */
 
 .blog-post {
-  margin-bottom: @padding-large-vertical;
+  margin-bottom: @padding-base-vertical;
 }
 .blog-post-title {
   margin-bottom: 5px;
 }
 .blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+  margin-bottom: @padding-small-vertical;
+  color: @gray;
+
+  .asset-meta-list{
+  	padding: 0;
+  	border-bottom: 2px solid @gray;
+    dt {
+    	background-color: @gray;
+    	color: #fff;
+    	padding-right: 1em;
+    }
+  }
 }
 
 
