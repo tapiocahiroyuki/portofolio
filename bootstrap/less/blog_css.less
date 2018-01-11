@@ -74,21 +74,31 @@ body {
   padding: @padding-small-vertical @padding-small-horizontal;
   font-weight: 500;
   color: #FFF;
-}
-.blog-nav-item:hover,
-.blog-nav-item:focus {
-  color: @gray-light;
-  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  .active{
+    color: @gray-light;
+    text-decoration: none;
+  }
 }
 
+.blog-nav-hover(){
+    background-color: @gray-lighter;
+    color: @gray-dark;
+}
 .blog-nav .nav {
   margin-right: @padding-base-horizontal;
-  & > li > a {
-    padding: @padding-small-vertical @padding-small-horizontal;
-    color: white;
-    &:hover{
-      background-color: @gray-lighter;
-      color: @gray-dark;
+  & > li {
+    &.active{
+      .blog-nav-hover();
+    }
+    & > a {
+      padding: @padding-small-vertical @padding-small-horizontal;
+      color: white;
+      &:hover{
+        .blog-nav-hover();
+      }
     }
   }
 }
@@ -96,25 +106,6 @@ body {
   & input, & label{
     font-size: @font-size-small;
   }
-}
-
-
-/* Active state gets a caret at the bottom */
-.blog-nav .active {
-  color: @gray-light;
-}
-.blog-nav .active:after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-  vertical-align: middle;
-  content: " ";
-  border-right:  5px solid transparent;
-  border-bottom: 5px solid;
-  border-left:   5px solid transparent;
 }
 
 

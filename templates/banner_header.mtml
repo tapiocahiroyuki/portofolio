@@ -16,9 +16,13 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="profile-navbar-collapse">
 <ul class="nav navbar-nav">
-<li><a href="<$mt:Link template="メインページ"$>"><i class="fa fa-home"></i></a></li>
+<li<mt:If name="main_index"> class="active"</mt:If>><a href="<$mt:Link template="メインページ"$>"><i class="fa fa-home"></i></a></li>
+<mt:If name="entry"><$mt:EntryCategory setvar="cat"$>
+<mt:elseIf name="category_archive"><$mt:CategoryLabel setvar="cat"$>
+<mt:else><$mt:setVar name="cat" value="notset"$></mt:If>
 <mt:TopLevelCategories>
-<li class="archive-header"><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
+<$mt:CategoryLabel setvar="catlabel"$>
+<li class="archive-header<mt:If name="catlabel" eq="$cat"> active</mt:If>"><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
 </mt:TopLevelCategories>
 </ul>
 <form class="navbar-form navbar-left site-search" method="get" action="<$mt:CGIPath$><$mt:SearchScript$>">
