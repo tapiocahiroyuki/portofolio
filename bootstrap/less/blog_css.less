@@ -180,9 +180,13 @@ h1, .h1{
   }
 
   // Paragraph
-  p, dl, ul, ol, code, pre {
+  p, ul, ol, code, pre {
     margin-left: @padding-base-horizontal;
     margin-right: @padding-base-horizontal;
+  }
+
+  .asset-body > ul {
+    margin-left: @padding-large-horizontal;
   }
 
   p:not(.noindent):not(.img)::before {
@@ -198,7 +202,7 @@ h1, .h1{
   }
 
   // List bullet
-  dl > dt, .list-bullet-01 {
+  dl:not(.dl-horizontal) > dt, .list-bullet-01 {
     &:before{
       content: "■";
     }
