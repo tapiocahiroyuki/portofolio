@@ -35,9 +35,11 @@
 
 <$mt:include module="バナーヘッダー"$>
 
-<main class="col-sm-8 blog-main">
+
 
 <mt:Ignore>===================パンくず========================</mt:Ignore>
+<div class="container-fruid breadcrumb-outer">
+<div class="container">
 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 <li><a href="<mt:BlogParentWebsite><$mt:WebsiteURL$></mt:BlogParentWebsite>">Home</a></li>
 <mt:HasNoParentCategory>
@@ -50,8 +52,14 @@
 <li><$mt:CategoryLabel$></li>
 </mt:HasParentCategory>
 </ul>
+</div>
+</div>
 <mt:Ignore>===================/ パンくず========================</mt:Ignore>
 
+
+<div class="container">
+<div class="row">
+<main class="col-sm-8 blog-main">
 <mt:Ignore>===================記事リスト========================</mt:Ignore>
 
 <mt:Entries limit="$entries_per_page" search_results="1">

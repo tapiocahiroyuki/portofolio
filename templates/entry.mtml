@@ -40,9 +40,10 @@ MT.commentIds = [<mt:Comments sort_order="ascend" glue=","><mt:CommentID></mt:Co
 
 <$mt:include module="バナーヘッダー"$>
 
-<main class="col-sm-8 blog-main">
 
 <mt:Ignore>===================パンくず========================</mt:Ignore>
+<div class="container-fruid breadcrumb-outer">
+<div class="container">
 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 <li><a href="<$mt:WebsiteURL$>">Home</a></li>
 <mt:ParentCategories>
@@ -51,9 +52,15 @@ MT.commentIds = [<mt:Comments sort_order="ascend" glue=","><mt:CommentID></mt:Co
 <mt:Else><li><$mt:CategoryLabel$></li></mt:Else>
 </mt:IfNonZero>
 </mt:ParentCategories>
-<li><$mt:EntryTitle$></li>
+<li class="active"><$mt:EntryTitle$></li>
 </ul>
+</div>
+</div><!-- /.breadcrumb-outer -->
 <mt:Ignore>===================/ パンくず========================</mt:Ignore>
+
+<div class="container">
+<div class="row">
+<main class="col-sm-8 blog-main">
 
 <article id="entry-<$mt:EntryID$>" class="blog-post entry entry-asset asset hentry h-entry">
 <div class="asset-header">

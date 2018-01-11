@@ -27,9 +27,10 @@
 
 <$mt:Include module="バナーヘッダー"$>
 
-<main class="col-sm-8 blog-main">
 
 <mt:Ignore>===================パンくず========================</mt:Ignore>
+<div class="container-fruid breadcrumb-outer">
+<div class="container">
 <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 <li><a href="<$mt:WebsiteURL$>">Home</a></li>
 <mt:SetVarBlock name="pagebasename"><$mt:PageBaseName$></mt:SetVarBlock>
@@ -41,9 +42,15 @@
 <li><a href="<$mt:WebsiteURL$><$mt:FolderPath$>/"><$mt:FolderLabel remove_html="1"$></a></li>
 </mt:PageFolder>
 </mt:Unless>
-<li><$mt:PageTitle$></li>
+<li class="active"><$mt:PageTitle$></li>
 </ul>
+</div>
+</div>
 <mt:Ignore>===================/ パンくず========================</mt:Ignore>
+
+<div class="container">
+<div class="row">
+<main class="col-sm-8 blog-main">
 
 <article id="page-<$mt:PageID$>" class="page">
 
