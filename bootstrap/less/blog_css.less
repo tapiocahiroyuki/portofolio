@@ -118,12 +118,14 @@ body {
   padding-bottom:  @padding-base-vertical;
 }
 .blog-title {
+  padding-left: @padding-base-horizontal;
   margin-top: 0;
   margin-bottom: @padding-base-vertical;
   font-weight: normal;
   padding-bottom: @padding-small-vertical;
 }
 .blog-description {
+  padding-left: @padding-base-horizontal;
   color: @gray;
 }
 
@@ -150,6 +152,7 @@ h1, .h1{
   // Headings
   h1, .h1{
     margin-bottom: @padding-large-vertical;
+    padding-left: @padding-base-horizontal;
   }
   h2, .h2{
     background-color: @gray-lighter;
@@ -180,8 +183,11 @@ h1, .h1{
     margin-right: @padding-base-horizontal;
   }
 
-  .asset-body > ul {
-    margin-left: @padding-large-horizontal;
+  .asset-body {
+    & > ul,
+    & > dl {
+      margin-left: @padding-large-horizontal;
+    }
   }
 
   p:not(.noindent):not(.img)::before {
