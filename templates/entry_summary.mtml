@@ -1,7 +1,10 @@
 <article id="entry-<$mt:EntryID$>" class="blog-post entry-asset entry asset hentry h-entry" itemscope itemType="http://schema.org/BlogPosting">
 
+<mt:If name="main_index">
 <h3 class="h3 blog-post-title entry-title p-name" itemprop="headline"><a href="<$mt:EntryPermalink encode_html="1"$>" rel="bookmark"><$mt:EntryTitle$></a></h3>
-
+<mt:Else>
+<h2 class="h2 blog-post-title entry-title p-name" itemprop="headline"><a href="<$mt:EntryPermalink encode_html="1"$>" rel="bookmark"><$mt:EntryTitle$></a></h2>
+</mt:If>
 <$mt:include module="期間"$>
 
 <mt:EntryIfTagged>
