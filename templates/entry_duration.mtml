@@ -22,7 +22,11 @@
 </dl>
 </footer>
 </mt:IfCategory>
-<mt:IfCategory name="ポートフォリオ" type="primary">
+<$mt:Var name="cats-portofolio[0]" value='ポートフォリオ'$>
+<$mt:Var name="cats-portofolio[1]" value='プライベート'$>
+<$mt:Var name="cats-portofolio[2]" value='業務'$>
+<mt:Loop name="cats-portofolio" sort_by="value">
+<mt:IfCategory name="$__value__">
 <footer class="asset-meta blog-post-meta">
 <dl class="dl-horizontal asset-meta-list">
 <dt><i class="fa fa-calendar" aria-hidden="true"></i>作成時期</dt>
@@ -30,3 +34,4 @@
 </dl>
 </footer>
 </mt:IfCategory>
+</mt:Loop>
