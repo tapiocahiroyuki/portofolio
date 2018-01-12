@@ -25,13 +25,17 @@
 <$mt:Var name="cats-portofolio[0]" value='ポートフォリオ'$>
 <$mt:Var name="cats-portofolio[1]" value='プライベート'$>
 <$mt:Var name="cats-portofolio[2]" value='業務'$>
-<mt:Loop name="cats-portofolio" sort_by="value">
+<mt:var name="flag" value="">
+<mt:loop name="cats-portofolio">
 <mt:IfCategory name="$__value__">
+<mt:unless name="flag">
 <footer class="asset-meta blog-post-meta">
 <dl class="dl-horizontal asset-meta-list">
 <dt><i class="fa fa-calendar" aria-hidden="true"></i>作成時期</dt>
 <dd><span><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></span></dd>
 </dl>
 </footer>
+</mt:unless>
+<mt:var name="flag" value="1">
 </mt:IfCategory>
 </mt:Loop>
