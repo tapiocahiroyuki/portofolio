@@ -17,13 +17,7 @@
 </mt:EntryIfTagged>
 
 <mt:If tag="EntryExcerpt">
-<p><$mt:EntryExcerpt$></p>
-</mt:If>
-
-<mt:If tag="EntryMore" convert_breaks="0">
-<div class="entry-more-link">
-<a href="<$mt:EntryPermalink encode_html="1"$>" itemprop="url" class="btn btn-primary">続きを読む</a>
-</div>
+<p><$mt:EntryExcerpt$><a href="<$mt:EntryPermalink encode_html="1"$>" itemprop="url">続きを読む</a></p>
 </mt:If>
 
 </article>
