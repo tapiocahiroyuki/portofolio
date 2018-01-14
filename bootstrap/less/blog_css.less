@@ -107,6 +107,11 @@ body {
   & input, & label{
     font-size: @font-size-small;
   }
+  @media (min-width: @grid-float-breakpoint) {
+    input {
+      width: 150px;
+    }
+  }
 }
 
 
