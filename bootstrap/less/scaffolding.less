@@ -48,6 +48,7 @@ textarea {
 a {
   color: @link-color;
   text-decoration: none;
+  font-family: @font-family-sans-serif-demibold;
 
   &:hover,
   &:focus {
@@ -58,8 +59,14 @@ a {
   &:focus {
     .tab-focus();
   }
-}
 
+  h1 &, .h1 &,
+  h2 &, .h2 &,
+  h3 &, .h3 &,
+  h4 &, .h4 & {
+    font-family: inherit;
+  }
+}
 
 // Figures
 //
