@@ -10,6 +10,10 @@ var rename = require("gulp-rename");
 var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
 
+var du = require('date-utils');
+
+var replace = require("gulp-replace");
+
 // Set the banner content
 // var banner = ['/*!\n',
 //     ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -21,8 +25,12 @@ var ftp = require( 'vinyl-ftp' );
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
+    var dt = new Date();
+    var formatted = dt.toFormat("YYYY/MM/DD HH24:MI:SS");
+
     return gulp.src('less/blog_css.less')
         .pipe(less())
+        .pipe(replace(/__currenttime__/gm,formatted))
 //        .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('dist/css'))
         //  .pipe(browserSync.reload({
