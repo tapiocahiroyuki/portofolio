@@ -6,7 +6,7 @@
 <ol class="list-unstyled">
 </mt:SubCatIsFirst>
 <mt:If tag="CategoryCount">
-<li><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> (<$mt:CategoryCount$>)</a>
+<li><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> <span class="badge"><$mt:CategoryCount$></span></a>
 <mt:Else>
 <li><$mt:CategoryLabel$>
 </mt:If>
