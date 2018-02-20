@@ -1,0 +1,41 @@
+<mt:IfCategory name="学歴" type="primary">
+<footer class="asset-meta blog-post-meta">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>在籍期間</dt>
+<dd><span><mt:EntryCustomFields include="入学・就職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time>入学／</mt:EntryCustomFields><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="end"><$mt:EntryCustomFieldValue$></time>卒業</mt:EntryCustomFields></span></dd>
+</dl>
+</footer>
+</mt:IfCategory>
+<mt:IfCategory name="職歴" type="primary">
+<footer class="asset-meta blog-post-meta">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>在籍期間</dt>
+<dd><span class="duration"><mt:EntryCustomFields include="入学・就職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields>〜<mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="end"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></span></dd>
+</dl>
+</footer>
+</mt:IfCategory>
+<mt:IfCategory name="資格" type="primary">
+<footer class="asset-meta blog-post-meta">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>取得</dt>
+<dd><span><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></span></dd>
+</dl>
+</footer>
+</mt:IfCategory>
+<$mt:Var name="cats-portofolio[0]" value='ポートフォリオ'$>
+<$mt:Var name="cats-portofolio[1]" value='プライベート'$>
+<$mt:Var name="cats-portofolio[2]" value='業務'$>
+<mt:var name="flag" value="">
+<mt:loop name="cats-portofolio">
+<mt:IfCategory name="$__value__">
+<mt:unless name="flag">
+<footer class="asset-meta blog-post-meta">
+<dl class="dl-horizontal asset-meta-list">
+<dt><i class="fa fa-calendar" aria-hidden="true"></i>作成時期</dt>
+<dd><span><mt:EntryCustomFields include="卒業・退職日"><time datetime="<$mt:EntryCustomFieldValue format_name="iso8601"$>" class="start"><$mt:EntryCustomFieldValue$></time></mt:EntryCustomFields></span></dd>
+</dl>
+</footer>
+</mt:unless>
+<mt:var name="flag" value="1">
+</mt:IfCategory>
+</mt:Loop>
