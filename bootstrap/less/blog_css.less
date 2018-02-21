@@ -313,3 +313,35 @@ h1, .h1{
   border-top: 1px solid @gray-base;
   clear: both;
 }
+
+/*
+ * MailForm
+ */
+
+@media screen and (min-width: 768px) {
+#steps > li {
+	height: 629px;
+}
+}
+
+#steps > li {
+	border: solid 1px #260808;
+	padding: 0;
+	background-color: #fcfafa;
+  & > h3 {
+  	margin-top:0;
+  	padding: 1.6rem;
+  	color: white;
+  	background-color: #260808;
+  	font-size: 1.6rem;
+  	border: none;
+  }
+  &:nth-child(2n) {
+  	border-color: #e7e4e4;
+  	background-color: #FFF;
+    > h3 {
+    	color: #260808;
+    	background-color: #e7e4e4;
+    }
+  }
+}
