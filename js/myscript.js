@@ -52,7 +52,9 @@ if (adTime.getFullYear() <  gannen[1]) {
 
 }
 }
-$(this).html(ng + y + "年" + (adTime.getMonth() + 1) + "月");
+
+var d = ($(this).hasClass('withDate')) ? (adTime.getUTCDate() + "日") : "";
+$(this).html(ng + y + "年" + (adTime.getMonth() + 1) + "月" + d);
 });
 }
 
@@ -62,7 +64,8 @@ $('time').each(function(){
 
 var adTime = new Date($(this).attr('datetime'));
 var y = adTime.getFullYear();
-$(this).html(y + "年" + (adTime.getMonth() + 1) + "月");
+var d = ($(this).hasClass('withDate')) ? (adTime.getUTCDate() + "日") : "";
+$(this).html(y + "年" + (adTime.getMonth() + 1) + "月" + d);
 });
 }
 
@@ -84,3 +87,11 @@ if ($.cookie( "calendar" ) === "gc"){
 } else {
   japaneseCalendar();
 }
+
+$('.recentUpdated ol li time').each(function(){
+  var adTime = new Date($(this).attr('datetime'));
+  var now = Date.now();
+  if((now - adTime) > 1000 * 60 * 60 * 24 * 30){$(this).parent().parent().remove();}
+});
+
+if (($('.recentUpdated ol li').length) === 0) {$('.recentUpdated').html('<h4>最新更新の記事</h4>\n<p>30日間に変更された記事はありません</p>');}

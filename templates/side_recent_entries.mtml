@@ -1,13 +1,15 @@
 <mt:If name="main_index">
 <mt:If tag="BlogEntryCount">
-<mt:Entries limit="5" sort_by="modified_on">
+<mt:Entries limit="50" sort_by="modified_on">
 <mt:EntriesHeader>
-<div class="sidebar-module">
+<div class="sidebar-module recentUpdated">
 <h4>最近更新の記事</h4>
 
 <ol class="list-unstyled">
 </mt:EntriesHeader>
-<li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+<li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a><br>
+<span class="updated">更新:
+<time datetime="<$mt:EntryModifiedDate format_name="iso8601"$>" class="end withDate"><$mt:EntryModifiedDate format="%b %d, %Y %H:%M" language="en"$></time></span></li>
 <mt:EntriesFooter>
 </ol>
 
