@@ -1,14 +1,8 @@
 ---
 author_link: ''
-author_name: 竹岡浩之
 class: blog
-description: 竹岡浩之オリジナルポートフォリオ公開用テンプレートです。
+description: ''
 elements:
-  blog_static_files:
-    component: ~
-    data: []
-
-    importer: blog_static_files
   custom_fields:
     component: commercial
     data:
@@ -30,6 +24,15 @@ elements:
         required: 0
         tag: dateExit
         type: datetime
+      eyecatch:
+        default: ''
+        description: アーカイブや記事トップ、og:imageなどで使います。
+        name: アイキャッチ
+        obj_type: entry
+        options: ~
+        required: 0
+        tag: eyeCatch
+        type: image
     importer: custom_fields
   default_categories:
     component: ~
@@ -71,10 +74,6 @@ elements:
                 file_template: "%-c/%i"
                 preferred: 1
         index:
-          blog_css:
-            label: blog_css
-            outfile: css/blog_css.min.css
-            rebuild_me: 1
           bootstrap_min_js:
             label: bootstrap_min_js
             outfile: js/bootstrap.min.js
@@ -95,6 +94,10 @@ elements:
             label: メインページ
             outfile: index.html
             rebuild_me: 1
+          blog_css_min: 
+            label: blog_css
+            outfile: css/blog_css.min.css
+            rebuild_me: 1
         individual:
           entry:
             label: 記事
@@ -114,10 +117,10 @@ elements:
             label: HTMLヘッダー
           pagination:
             label: ページネーション
-          sidebar:
-            label: サイドバー
           period:
             label: 期間
+          sidebar:
+            label: サイドバー
         page:
           page:
             label: ウェブページ
@@ -134,6 +137,8 @@ elements:
           search_results:
             label: 検索結果
         widget:
+          calendar_btn:
+            label: 和暦ボタン
           side_about:
             label: About
           side_category_archive_list:
@@ -154,8 +159,6 @@ elements:
             label: 検索
           side_tag_cloud:
             label: タグクラウド
-          calendar_btn:
-            label: 和暦ボタン
         widgetset:
           side_widgetset:
             label: サイドバーウィジェットセット
@@ -166,7 +169,7 @@ elements:
               - カテゴリアーカイブ
               - About
     importer: template_set
-id: theme_from_portofolio_release
+id: theme_from_portofolio_12
 label: Portofolioのテーマ
 name: Portofolioのテーマ
-version: '1.1'
+version: '1.2'
