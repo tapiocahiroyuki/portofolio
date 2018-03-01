@@ -1,4 +1,4 @@
-  // カスタマイズ
+// カスタマイズ
 
 //期間の算出
 $('.duration').each(function(){
@@ -40,15 +40,15 @@ var prevGannen = nengo[i-1];
 y = ((adTime.getFullYear() === prevGannen[1]) ? '元' : (adTime.getFullYear() - prevGannen[1] + 1));
 ng = gannen[0];
 if (adTime.getFullYear() <  gannen[1]) {
-  break;
+break;
 } else if (adTime.getFullYear() === gannen[1]) {
-  if ((adTime.getMonth() + 1) < gannen[2]) {
+if ((adTime.getMonth() + 1) < gannen[2]) {
+  break;
+} else if ((adTime.getMonth() + 1) === gannen[2]) {
+  if (adTime.getDay() < gannen[3]){
     break;
-  } else if ((adTime.getMonth() + 1) === gannen[2]) {
-    if (adTime.getDay() < gannen[3]){
-      break;
-    }
   }
+}
 
 }
 }
@@ -69,29 +69,37 @@ $(this).html(y + "年" + (adTime.getMonth() + 1) + "月" + d);
 });
 }
 
-
-//ラジオボタンを押した時
-$('#jc').bind('change',function(){
-  $.cookie( "calendar" , "jc" , { expires: 7 , path: "/"});
-  japaneseCalendar();
-});
-$('#gc').bind('change',function(){
-  $.cookie( "calendar" , "gc" , { expires: 7 , path: "/"});
-  gregorianCalendar();
-});
-
-//最初の読み込み時
-if ($.cookie( "calendar" ) === "gc"){
-  $('#gc').prop('checked',true);
-  gregorianCalendar();
-} else {
-  japaneseCalendar();
+//チェックボックスを読み込んで、西暦・和暦の日付を表示
+function generateDate(btnState){
+if (btnState === true) {japaneseCalendar();} else {gregorianCalendar();}
 }
 
+
+
+
+
+
+//最初の読み込み時
+var btnState = ($.cookie( "calendar" ) === 'true');
+console.log('btn:'+btnState);
+var active = ((btnState === true) ? 'active':'');
+$('#jc').prop('checked',btnState).parent().addClass(active);
+generateDate(btnState);
+
+//ラジオボタンを押した時
+
+$('#jc').bind('change',function(){
+var btnState = ($('#jc').prop('checked') === true);
+$.cookie( "calendar" , btnState , { expires: 7 , path: "/"});
+generateDate(btnState);
+console.log('btn:'+btnState);
+});
+
+
 $('.recentUpdated ol li time').each(function(){
-  var adTime = new Date($(this).attr('datetime'));
-  var now = Date.now();
-  if((now - adTime) > 1000 * 60 * 60 * 24 * 30){$(this).parent().parent().remove();}
+var adTime = new Date($(this).attr('datetime'));
+var now = Date.now();
+if((now - adTime) > 1000 * 60 * 60 * 24 * 30){$(this).parent().parent().remove();}
 });
 
 if (($('.recentUpdated ol li').length) === 0) {$('.recentUpdated').html('<h4>最新更新の記事</h4>\n<p>30日間に変更された記事はありません</p>');}
